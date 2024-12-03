@@ -6,7 +6,7 @@ function getSmaller(n, k) {
 }
 
 function getLargestPrimeFactor(n) {
-  k = 2;
+  let k = 2;
   while (true) {
     n = getSmaller(n, k);
     if (n === 1) return k;
