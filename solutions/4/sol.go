@@ -8,18 +8,30 @@ import (
 func isPalindromic(n int) bool {
   nStr := strconv.Itoa(n)
   start := 0
-  end := len(nStr) - 1;
+  end := len(nStr) - 1
   for start < end {
     if nStr[start] != nStr[end] {
       return false
     }
-    start++;
-    end--;
+    start++
+    end--
   }
-  return true;
+  return true
+}
+
+func getLargestPalindromic() int{
+  largetPalindromic := 0
+  for first := 999; first >= 100; first-- {
+    for second := first; second >= 100; second-- {
+      product := first * second
+      if product > largetPalindromic && isPalindromic(product) {
+        largetPalindromic = product
+      }
+    }
+  }
+  return largetPalindromic
 }
 
 func main() {
-	fmt.Println(isPalindromic(120))
-	fmt.Println(isPalindromic(121))
+	fmt.Print(getLargestPalindromic())
 }
