@@ -13,4 +13,4 @@ def get_largest_prime_factor(n):
       return k
     k+=1
 
-print(get_largest_prime_factor(100))
+print(get_largest_prime_factor(N))
