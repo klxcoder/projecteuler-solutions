@@ -1,8 +1,16 @@
 const isPalindromic = (n) => {
   const nStr = n.toString();
-  console.log(n);
-  console.log(nStr);
-  console.log(typeof nStr);
+  let start = 0;
+  let end = nStr.length - 1;
+  while (start < end) {
+    if (nStr[start] !== nStr[end]) {
+      return false;
+    }
+    start++;
+    end--;
+  }
+  return true;
 }
 
-isPalindromic(0);
+console.log(isPalindromic(120))
+console.log(isPalindromic(121))
