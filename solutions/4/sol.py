@@ -9,5 +9,13 @@ def is_palindromic(n):
     end -= 1
   return True
 
-print(is_palindromic(120))
-print(is_palindromic(121))
+def get_largest_palindromic():
+  largest_palindromic = 0
+  for first in range(999, 99, -1):
+    for second in range(first, 99, -1):
+      product = first * second
+      if product > largest_palindromic and is_palindromic(product):
+        largest_palindromic = product
+  return largest_palindromic
+
+print(get_largest_palindromic())
