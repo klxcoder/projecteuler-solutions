@@ -3,13 +3,13 @@ const LIMIT = 100;
 
 const isEven = (term) => term % 2 === 0;
 
-const fib_sequence = [1, 2];
+const fibSequence = [1, 2];
 
 while (true) {
-  const [first, second] = fib_sequence.slice(-2);
+  const [first, second] = fibSequence.slice(-2);
   const term = first + second;
   if (term > LIMIT) break;
-  fib_sequence.push(term);
+  fibSequence.push(term);
 }
 
-console.log(fib_sequence);
+console.log(fibSequence);
