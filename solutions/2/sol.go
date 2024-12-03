@@ -8,7 +8,11 @@ func isEven(number int) bool {
 	return number%2 == 0
 }
 
+func getFibSequence(limit int) []int {
+	fibSequence := []int{1,2}
+	return fibSequence
+}
+
 func main() {
-	fmt.Println(isEven(10))
-	fmt.Println(isEven(11))
+	fmt.Println(getFibSequence(100))
 }
