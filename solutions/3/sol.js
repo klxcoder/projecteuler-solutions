@@ -5,4 +5,13 @@ function getSmaller(n, k) {
   return n;
 }
 
-console.log(getSmaller(1000, 2));
+function getLargestPrimeFactor(n) {
+  k = 2;
+  while (true) {
+    n = getSmaller(n, k);
+    if (n === 1) return k;
+    k++;
+  }
+}
+
+console.log(getLargestPrimeFactor(600851475143));
