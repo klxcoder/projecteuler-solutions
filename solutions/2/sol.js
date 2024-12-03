@@ -1,4 +1,4 @@
-// const LIMIT = 4_000_000;
+const LIMIT = 4_000_000;
 
 const isEven = (term) => term % 2 === 0;
 
@@ -15,4 +15,11 @@ const getFibSequence = (limit) => {
   return fibSequence;
 }
 
-console.log(getFibSequence(200));
+const fibSequence = getFibSequence(LIMIT);
+
+let sum = 0;
+for (const term of fibSequence) {
+  if (isEven(term)) sum += term;
+}
+
+console.log(sum);
