@@ -15,11 +15,14 @@ const getFibSequence = (limit) => {
   return fibSequence;
 }
 
-const fibSequence = getFibSequence(LIMIT);
-
-let sum = 0;
-for (const term of fibSequence) {
-  if (isEven(term)) sum += term;
+const getSum = (fibSequence) => {
+  let sum = 0;
+  for (const term of fibSequence) {
+    if (isEven(term)) sum += term;
+  }
+  return sum;
 }
 
+const fibSequence = getFibSequence(LIMIT);
+const sum = getSum(fibSequence);
 console.log(sum);
