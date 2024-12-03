@@ -23,11 +23,17 @@ func getFibSequence(limit int) []int {
 }
 
 func getSum(fibSequence []int) int {
-	return 0
+	sum := 0
+	for _, term := range fibSequence {
+		if isEven(term) {
+			sum += term
+		}
+	}
+	return sum
 }
 
 func main() {
-	fibSequence := getFibSequence(100)
+	fibSequence := getFibSequence(LIMIT)
 	sum := getSum(fibSequence)
 	fmt.Println(sum)
 }
