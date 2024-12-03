@@ -3,8 +3,11 @@ package main
 import "fmt"
 
 func main() {
-	for num:=1; num<10; num++ {
-		fmt.Println(num)
+	sum := 0
+	for num:=1; num<1000; num++ {
+		if num % 3 == 0 || num % 5 == 0 {
+			sum += num
+		}
 	}
-	fmt.Print("Go Print ok")
+	fmt.Print(sum)
 }
