@@ -10,6 +10,12 @@ func isEven(number int) bool {
 
 func getFibSequence(limit int) []int {
 	fibSequence := []int{1,2}
+	for {
+		lastTwo := fibSequence[len(fibSequence)-2:]
+		first, second := lastTwo[0], lastTwo[1]
+		fmt.Println(first, second)
+		break
+	}
 	return fibSequence
 }
 
