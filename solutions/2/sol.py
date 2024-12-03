@@ -13,5 +13,13 @@ def get_fib_sequence(limit):
     fib_sequence.append(term)
   return fib_sequence
 
-fib_sequence = get_fib_sequence(100)
-print(fib_sequence)
+def get_sum(fib_sequence):
+  sum = 0
+  for term in fib_sequence:
+    if(is_even(term)):
+      sum += term
+  return sum
+
+fib_sequence = get_fib_sequence(LIMIT)
+sum = get_sum(fib_sequence)
+print(sum)
