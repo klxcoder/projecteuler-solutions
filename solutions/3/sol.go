@@ -23,5 +23,5 @@ func getLargestPrimeFactor(n int) int {
 }
 
 func main() {
-	fmt.Print(getLargestPrimeFactor(100))
+	fmt.Print(getLargestPrimeFactor(N))
 }
