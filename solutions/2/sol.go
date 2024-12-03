@@ -13,8 +13,11 @@ func getFibSequence(limit int) []int {
 	for {
 		lastTwo := fibSequence[len(fibSequence)-2:]
 		first, second := lastTwo[0], lastTwo[1]
-		fmt.Println(first, second)
-		break
+		term := first + second
+		if term > limit {
+			break
+		}
+		fibSequence = append(fibSequence, term)
 	}
 	return fibSequence
 }
