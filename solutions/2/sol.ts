@@ -10,8 +10,17 @@ const getFibSequence: (limit: number) => number[] = (limit) => {
     if (term > limit) break;
     fibSequence.push(term);
   }
-  return fibSequence
+  return fibSequence;
 }
 
-const fibSequence = getFibSequence(100);
-console.log(fibSequence);
+const getSum: (fibSequence: number[]) => number = (fibSequence) => {
+  let sum: number = 0;
+  for (const term of fibSequence) {
+    if (isEven(term)) sum += term;
+  }
+  return sum;
+}
+
+const fibSequence: number[] = getFibSequence(LIMIT);
+const sum: number = getSum(fibSequence);
+console.log(sum);
