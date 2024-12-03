@@ -5,6 +5,5 @@ You can use it as an additional resource to learn **Algorithms and Data Structur
 
 **Note:** Avoid using these solutions to simply copy answers; instead, use them as learning tools to understand problem-solving approaches.
 
-## Additional Resources
-
-- [Project Euler](https://projecteuler.net/)
+## My profile
+![https://projecteuler.net/profile/klxcoder.png](https://projecteuler.net/profile/klxcoder.png)
