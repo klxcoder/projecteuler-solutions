@@ -1,4 +1,4 @@
-const N = 600851475143
+const N = 600851475143;
 
 function getSmaller(n, k) {
   while (n % k === 0) n /= k;
