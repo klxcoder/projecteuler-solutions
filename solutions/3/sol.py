@@ -5,4 +5,12 @@ def get_smaller(n, k):
     n = int(n/k)
   return n
 
-print(getSmaller(100, 2))
+def get_largest_prime_factor(n):
+  k = 2
+  while True:
+    n = get_smaller(n, k)
+    if n==1:
+      return k
+    k+=1
+
+print(get_largest_prime_factor(100))
