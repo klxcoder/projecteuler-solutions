@@ -22,6 +22,12 @@ func getFibSequence(limit int) []int {
 	return fibSequence
 }
 
+func getSum(fibSequence []int) int {
+	return 0
+}
+
 func main() {
-	fmt.Println(getFibSequence(100))
+	fibSequence := getFibSequence(100)
+	sum := getSum(fibSequence)
+	fmt.Println(sum)
 }
