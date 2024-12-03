@@ -12,5 +12,17 @@ const isPalindromic = (n) => {
   return true;
 }
 
-console.log(isPalindromic(120))
-console.log(isPalindromic(121))
+const getLargestPalindromic = () => {
+  let largetPalindromic = 0;
+  for (let first = 999; first >= 100; first--) {
+    for (let second = first; second >= 100; second--) {
+      const product = first * second;
+      if (product > largetPalindromic && isPalindromic(product)) {
+        largetPalindromic = product;
+      }
+    }
+  }
+  return largetPalindromic;
+}
+
+console.log(getLargestPalindromic())
