@@ -1,4 +1,4 @@
-const arr = [
+const ARR = [
   [8, 2, 22, 97, 38, 15, 0, 40, 0, 75, 4, 5, 7, 78, 52, 12, 50, 77, 91, 8],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48, 4, 56, 62, 0],
   [81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30, 3, 49, 13, 36, 65],
@@ -29,4 +29,21 @@ const getProduct = (arr) => {
   }
   return product;
 }
-console.log(getProduct([5, 6, 2]));
+const getMaxHorizontal = (arr, n, k) => {
+  let result = 0;
+  for (const row of arr) {
+    for (let start = 0; start <= n - k; start++) {
+      const end = start + k - 1;
+      const subArr = [];
+      for (let index = start; index <= end; index++) {
+        subArr.push(row[index]);
+      }
+      const product = getProduct(subArr);
+      if (product > result) {
+        result = product;
+      }
+    }
+  }
+  return result;
+}
+console.log(getMaxHorizontal(ARR, N, K));
