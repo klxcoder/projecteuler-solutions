@@ -13,5 +13,5 @@ const squareOfSum = (n) => {
 
 const getAnswer = (n) => squareOfSum(n) - sumOfSquares(n);
 
-const answer = getAnswer(10);
+const answer = getAnswer(100);
 console.log(answer);
