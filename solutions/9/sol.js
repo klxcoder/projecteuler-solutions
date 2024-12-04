@@ -12,7 +12,7 @@ const getTriplet = (n) => {
 
 const getProduct = ([a, b, c]) => a * b * c;
 
-const triplet = getTriplet(12);
+const triplet = getTriplet(1000);
 console.log(triplet);
 const product = getProduct(triplet);
 console.log(product);
