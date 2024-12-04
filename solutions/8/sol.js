@@ -18,5 +18,5 @@ const getAnswer = (s, k) => {
   }
   return answer;
 }
-const answer = getAnswer(s, 4);
+const answer = getAnswer(s, 13);
 console.log(answer);
