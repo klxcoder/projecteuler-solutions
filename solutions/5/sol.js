@@ -3,9 +3,10 @@ const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19]
 
 // Greatest common divisor
 const gcd = (a, b) => {
-  if (a === b) return a;
-  if (a > b) return gcd(a - b, b);
-  if (a < b) return gcd(b - a, a);
+  if (a === 0) return b;
+  if (b === 0) return a;
+  if (a > b) return gcd(a % b, b);
+  if (a < b) return gcd(b % a, a);
 }
 
 // Least common multiple
