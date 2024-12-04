@@ -20,4 +20,13 @@ const arr = [
   [20, 73, 35, 29, 78, 31, 90, 1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57, 5, 54],
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48],
 ]
-console.log(arr);
+const N = 20;
+const K = 4;
+const getProduct = (arr) => {
+  let product = 1;
+  for (const num of arr) {
+    product *= num;
+  }
+  return product;
+}
+console.log(getProduct([5, 6, 2]));
