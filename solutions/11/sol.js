@@ -95,7 +95,12 @@ const getMaxAntiDiagonal = (arr, n, k) => {
   }
   return result;
 }
-console.log(getMaxHorizontal(ARR, N, K));
-console.log(getMaxVertical(ARR, N, K));
-console.log(getMaxMainDiagonal(ARR, N, K));
-console.log(getMaxAntiDiagonal(ARR, N, K));
+const maxHorizontal = getMaxHorizontal(ARR, N, K);
+const maxVertical = getMaxVertical(ARR, N, K)
+const maxMainDiagonal = getMaxMainDiagonal(ARR, N, K)
+const maxAntiDiagonal = getMaxAntiDiagonal(ARR, N, K)
+const max = Math.max(
+  Math.max(maxHorizontal, maxVertical),
+  Math.max(maxMainDiagonal, maxAntiDiagonal),
+)
+console.log(max)
