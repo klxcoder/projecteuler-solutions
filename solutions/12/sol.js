@@ -22,5 +22,5 @@ const getAnswer = (limit) => {
   }
 }
 
-const answer = getAnswer(5);
+const answer = getAnswer(LIMIT);
 console.log(answer);
