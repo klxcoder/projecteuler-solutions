@@ -11,4 +11,13 @@ const gcd = (a, b) => {
 // Least common multiple
 const lcm = (a, b) => a * b / gcd(a, b);
 
-console.log(lcm(10, 12));
+const getAnswer = (limit) => {
+  let answer = 1;
+  for (let num = 2; num <= limit; num++) {
+    answer = lcm(answer, num);
+  }
+  return answer;
+}
+
+const answer = getAnswer(10);
+console.log(answer);
