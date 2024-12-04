@@ -24,6 +24,6 @@ const getPrimes = (limit) => {
 
 const getSum = (primes) => primes.reduce((sum, prime) => sum + prime, 0);
 
-const primes = getPrimes(10);
+const primes = getPrimes(LIMIT);
 const sum = getSum(primes);
 console.log(sum);
