@@ -11,5 +11,7 @@ const squareOfSum = (n) => {
   return sum * sum;
 }
 
-console.log(sumOfSquares(10));
-console.log(squareOfSum(10));
+const getAnswer = (n) => squareOfSum(n) - sumOfSquares(n);
+
+const answer = getAnswer(10);
+console.log(answer);
