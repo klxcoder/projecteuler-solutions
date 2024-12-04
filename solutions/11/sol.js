@@ -46,4 +46,26 @@ const getMaxHorizontal = (arr, n, k) => {
   }
   return result;
 }
+const getMaxVertical = (arr, n, k) => {
+  let result = 0;
+  for (let colIndex = 0; colIndex < n; colIndex++) {
+    for (let start = 0; start <= n - k; start++) {
+      const end = start + k - 1;
+      const subArr = [];
+      for (let rowIndex = start; rowIndex <= end; rowIndex++) {
+        subArr.push(arr[rowIndex][colIndex]);
+      }
+      const product = getProduct(subArr);
+      if (product > result) {
+        result = product;
+      }
+    }
+  }
+  return result;
+}
+const getMaxMainDiagonal = (arr, n, k) => {
+  let result = 0;
+  return result;
+}
 console.log(getMaxHorizontal(ARR, N, K));
+console.log(getMaxVertical(ARR, N, K));
