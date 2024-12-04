@@ -1,3 +1,5 @@
+const LIMIT = 500;
+
 const getDivisorCount = (n) => {
   const squareRoot = Math.floor(Math.sqrt(n));
   let count = 0;
@@ -9,6 +11,16 @@ const getDivisorCount = (n) => {
   return count;
 }
 
-for (let num = 1; num <= 28; num++) {
-  console.log(num, getDivisorCount(num));
+const getAnswer = (limit) => {
+  let sum = 1;
+  for (let num = 2; ; num++) {
+    sum += num;
+    const divisorCount = getDivisorCount(sum);
+    if (divisorCount > limit) {
+      return sum;
+    }
+  }
 }
+
+const answer = getAnswer(5);
+console.log(answer);
