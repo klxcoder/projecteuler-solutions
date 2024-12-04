@@ -8,6 +8,7 @@ const gcd = (a, b) => {
   if (a < b) return gcd(b - a, a);
 }
 
-console.log(gcd(24, 60));
-console.log(gcd(48, 18));
-console.log(gcd(1, 18));
+// Least common multiple
+const lcm = (a, b) => a * b / gcd(a, b);
+
+console.log(lcm(10, 12));
