@@ -8,5 +8,8 @@ def square_of_sum(n):
   sum = int(n * (n+1) / 2)
   return sum * sum
 
-print(sum_of_squares(10))
-print(square_of_sum(10))
+def get_answer(n):
+  return square_of_sum(n) - sum_of_squares(n)
+
+answer = get_answer(10)
+print(answer)
