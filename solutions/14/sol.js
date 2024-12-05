@@ -1,3 +1,5 @@
+const LIMIT = 1_000_000;
+
 const getChainLength = (startingNumber) => {
   let count = 1;
   while (startingNumber !== 1) {
@@ -11,9 +13,19 @@ const getChainLength = (startingNumber) => {
   return count;
 }
 
-console.log(getChainLength(1))
-console.log(getChainLength(2))
-console.log(getChainLength(4))
-console.log(getChainLength(8))
-console.log(getChainLength(16))
-console.log(getChainLength(13))
+const getLongestChain = (limit) => {
+  const longestChain = {
+    startingNumber: 1,
+    longestChainLength: 1,
+  }
+  for (let num = 1; num < limit; num++) {
+    const chainLength = getChainLength(num);
+    if (chainLength > longestChain.longestChainLength) {
+      longestChain.startingNumber = num;
+      longestChain.longestChainLength = chainLength;
+    }
+  }
+  return longestChain;
+}
+
+console.log(getLongestChain(LIMIT).startingNumber);
