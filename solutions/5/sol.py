@@ -1,3 +1,5 @@
+N = 20
+
 # greatest common divisor
 def gcd(a, b):
   if a==0:
@@ -5,9 +7,9 @@ def gcd(a, b):
   if b==0:
     return a
   if a>b:
-    return gcd(a-b, b)
+    return gcd(a%b, b)
   else:
-    return gcd(b-a, a)
+    return gcd(b%a, a)
 
 # least common multiple
 def lcm(a, b):
