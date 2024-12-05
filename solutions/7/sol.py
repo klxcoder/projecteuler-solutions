@@ -24,6 +24,11 @@ def get_prime_numbers(n, head_prime_numbers):
       tail_prime_numbers.append(num)
   return head_prime_numbers + tail_prime_numbers
 
-print(get_prime_numbers(2, [2]))
-print(get_prime_numbers(4, [2, 3]))
-print(get_prime_numbers(8, [2, 3, 5, 7]))
+def get_answer(limit):
+  n = 2
+  arr = [2]
+  while len(arr) < limit:
+    arr = get_prime_numbers(n, arr)
+    n = n * 2
+  return arr[limit-1]
+print(get_answer(6))
