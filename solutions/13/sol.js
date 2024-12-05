@@ -111,4 +111,5 @@ const getSum = (numbers) => {
   return sum;
 }
 const sum = getSum(NUMBERS);
-console.log(sum);
+const answer = sum.toString().substring(0, K);
+console.log(answer);
