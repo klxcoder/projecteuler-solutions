@@ -37,6 +37,7 @@ const getAnswer = (n) => {
   }
   for (let num = 2; num < n; num++) {
     const d1 = dObj[num];
+    if (d1 === num) continue;
     let d2;
     if (d1 < n) {
       d2 = dObj[d1];
