@@ -13,5 +13,11 @@ def gcd(a, b):
 def lcm(a, b):
   return int(a * b / gcd(a, b))
 
-print(lcm(4, 6))
-print(lcm(5, 10))
+def getAnswer(n):
+  answer = 1
+  for num in range(2, n+1):
+    answer = lcm(answer, num)
+  return answer
+
+answer = getAnswer(10)
+print(answer)
