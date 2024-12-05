@@ -11,7 +11,9 @@ const getAnswer = (arr) => {
   sumArr[0][0] = arr[0][0];
   for (let row = 1; row < n; row++) {
     sumArr[row][0] = arr[row][0] + sumArr[row - 1][0];
-    //
+    for (let col = 1; col < row; col++) {
+      sumArr[row][col] = arr[row][col] + Math.max(sumArr[row - 1][col - 1], sumArr[row - 1][col]);
+    }
     sumArr[row][row] = arr[row][row] + sumArr[row - 1][row - 1];
   }
   return sumArr;
