@@ -29,11 +29,11 @@ const getSum = (arr) => {
 }
 
 const getAnswer = (n) => {
-  const ds = new Array(n).fill(0);
+  const dObj = {}
   for (let num = 2; num < n; num++) {
-    ds[num] = getD(num);
+    dObj[num] = getD(num);
   }
-  return ds;
+  return dObj;
 }
 
 const answer = getAnswer(10);
