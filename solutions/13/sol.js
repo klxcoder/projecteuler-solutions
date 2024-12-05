@@ -101,5 +101,14 @@ const NUMBERS = [
   "53503534226472524250874054075591789781264330331690",
 ]
 
-console.log(NUMBERS.length);
-console.log(NUMBERS[0].length);
+const K = 10;
+
+const getSum = (numbers) => {
+  let sum = 0n;
+  for (const numStr of numbers) {
+    sum += BigInt(numStr);
+  }
+  return sum;
+}
+const sum = getSum(NUMBERS);
+console.log(sum);
