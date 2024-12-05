@@ -1,3 +1,5 @@
+const N = 100;
+
 const getFactorial = (n) => {
   let factorial = 1n;
   for (let num = 2n; num <= n; num++) {
@@ -13,6 +15,6 @@ const getSumDigits = (n) => {
   }
   return sum;
 }
-const factorial = getFactorial(10);
+const factorial = getFactorial(N);
 const sum = getSumDigits(factorial);
 console.log(sum);
