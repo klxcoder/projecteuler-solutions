@@ -1,5 +1,7 @@
 import math
 
+LIMIT = 10_001
+
 def get_prime_numbers(n, head_prime_numbers):
   """
   Get all prime numbers from 0 to n*2 (inclusive).
@@ -31,4 +33,4 @@ def get_answer(limit):
     arr = get_prime_numbers(n, arr)
     n = n * 2
   return arr[limit-1]
-print(get_answer(6))
+print(get_answer(LIMIT))
