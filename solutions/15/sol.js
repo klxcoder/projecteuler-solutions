@@ -1,3 +1,5 @@
+const N = 20;
+
 const getAnswer = (n) => {
   const arr = new Array(n + 1).fill(true).map(() => new Array(n + 1).fill(-1));
   for (let index = 0; index <= n; index++) {
@@ -12,5 +14,5 @@ const getAnswer = (n) => {
   return arr[n][n];
 }
 
-const answer = getAnswer(2);
+const answer = getAnswer(N);
 console.log(answer);
