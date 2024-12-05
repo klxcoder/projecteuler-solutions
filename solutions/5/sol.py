@@ -21,5 +21,5 @@ def getAnswer(n):
     answer = lcm(answer, num)
   return answer
 
-answer = getAnswer(10)
+answer = getAnswer(N)
 print(answer)
