@@ -7,12 +7,14 @@ const d = (n) => {
       properDivisors.push(n / num);
     }
   }
-  if (squareRoot * squareRoot === n) {
-    properDivisors.push(squareRoot)
-  } else {
-    if (n % squareRoot === 0) {
-      properDivisors.push(squareRoot);
-      properDivisors.push(n / squareRoot);
+  if (squareRoot >= 2) {
+    if (squareRoot * squareRoot === n) {
+      properDivisors.push(squareRoot)
+    } else {
+      if (n % squareRoot === 0) {
+        properDivisors.push(squareRoot);
+        properDivisors.push(n / squareRoot);
+      }
     }
   }
   return properDivisors;
@@ -26,3 +28,8 @@ const getSum = (arr) => {
 
 console.log(getSum(d(220)));
 console.log(getSum(d(284)));
+console.log(2, d(2));
+console.log(3, d(3));
+console.log(4, d(4));
+console.log(5, d(5));
+console.log(6, d(6));
