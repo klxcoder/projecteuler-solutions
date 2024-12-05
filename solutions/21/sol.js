@@ -1,6 +1,6 @@
 const LIMIT = 10_000;
 
-const d = (n) => {
+const getD = (n) => {
   const squareRoot = Math.floor(Math.sqrt(n));
   const properDivisors = [1];
   for (let num = 2; num < squareRoot; num++) {
@@ -31,7 +31,7 @@ const getSum = (arr) => {
 const getAnswer = (n) => {
   const ds = new Array(n).fill(0);
   for (let num = 2; num < n; num++) {
-    ds[num] = d(num);
+    ds[num] = getD(num);
   }
   return ds;
 }
