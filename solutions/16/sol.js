@@ -15,6 +15,6 @@ const getSumDigits = (n) => {
   }
   return sum;
 }
-const power = getPower(15);
+const power = getPower(N);
 const sumDigits = getSumDigits(power);
 console.log(sumDigits);
