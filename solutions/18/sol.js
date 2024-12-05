@@ -12,7 +12,7 @@ const getAnswer = (arr) => {
   for (let row = 1; row < n; row++) {
     sumArr[row][0] = arr[row][0] + sumArr[row - 1][0];
     //
-    //
+    sumArr[row][row] = arr[row][row] + sumArr[row - 1][row - 1];
   }
   return sumArr;
 }
