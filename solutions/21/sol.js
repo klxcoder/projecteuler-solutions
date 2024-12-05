@@ -30,8 +30,9 @@ const getSum = (arr) => {
 
 const getAnswer = (n) => {
   const dObj = {}
+  dObj[1] = 0;
   for (let num = 2; num < n; num++) {
-    dObj[num] = getD(num);
+    dObj[num] = getSum(getD(num));
   }
   return dObj;
 }
