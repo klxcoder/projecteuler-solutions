@@ -16,7 +16,13 @@ const getAnswer = (arr) => {
     }
     sumArr[row][row] = arr[row][row] + sumArr[row - 1][row - 1];
   }
-  return sumArr;
+  let answer = 0;
+  for (let col = 0; col < n; col++) {
+    if (sumArr[n - 1][col] > answer) {
+      answer = sumArr[n - 1][col];
+    }
+  }
+  return answer;
 }
 const answer = getAnswer(EXAMPLE_ARR);
 console.log(answer);
