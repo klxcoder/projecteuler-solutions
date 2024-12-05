@@ -1,3 +1,5 @@
+const LIMIT = 10_000;
+
 const d = (n) => {
   const squareRoot = Math.floor(Math.sqrt(n));
   const properDivisors = [1];
@@ -26,10 +28,13 @@ const getSum = (arr) => {
   return sum;
 }
 
-console.log(getSum(d(220)));
-console.log(getSum(d(284)));
-console.log(2, d(2));
-console.log(3, d(3));
-console.log(4, d(4));
-console.log(5, d(5));
-console.log(6, d(6));
+const getAnswer = (n) => {
+  const ds = new Array(n).fill(0);
+  for (let num = 2; num < n; num++) {
+    ds[num] = d(num);
+  }
+  return ds;
+}
+
+const answer = getAnswer(10);
+console.log(answer);
