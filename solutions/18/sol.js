@@ -6,7 +6,9 @@ const EXAMPLE_ARR = [
 ]
 
 const getAnswer = (arr) => {
-  return arr;
+  const n = arr.length;
+  const sumArr = new Array(n).fill(true).map(() => new Array(n).fill(0));
+  return sumArr;
 }
 const answer = getAnswer(EXAMPLE_ARR);
 console.log(answer);
