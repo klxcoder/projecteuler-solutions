@@ -29,7 +29,7 @@ const getSum = (arr) => {
 }
 
 const getAnswer = (n) => {
-  const arr = []
+  let sum = 0;
   const dObj = {}
   dObj[1] = 0;
   for (let num = 2; num < n; num++) {
@@ -43,10 +43,10 @@ const getAnswer = (n) => {
     } else {
       d2 = getSum(getD(d1));
     }
-    if (d2 === num) arr.push(num);
+    if (d2 === num) sum += num;
   }
-  return arr;
+  return sum;
 }
 
-const answer = getAnswer(300);
+const answer = getAnswer(LIMIT);
 console.log(answer);
