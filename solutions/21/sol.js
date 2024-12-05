@@ -29,13 +29,24 @@ const getSum = (arr) => {
 }
 
 const getAnswer = (n) => {
+  const arr = []
   const dObj = {}
   dObj[1] = 0;
   for (let num = 2; num < n; num++) {
     dObj[num] = getSum(getD(num));
   }
-  return dObj;
+  for (let num = 2; num < n; num++) {
+    const d1 = dObj[num];
+    let d2;
+    if (d1 < n) {
+      d2 = dObj[d1];
+    } else {
+      d2 = getSum(getD(d1));
+    }
+    if (d2 === num) arr.push(num);
+  }
+  return arr;
 }
 
-const answer = getAnswer(10);
+const answer = getAnswer(300);
 console.log(answer);
