@@ -9,7 +9,11 @@ const getPower = (n) => {
 }
 const getSumDigits = (n) => {
   const nStr = n.toString();
-  return nStr;
+  let sum = 0;
+  for (const char of nStr) {
+    sum += char * 1;
+  }
+  return sum;
 }
 const power = getPower(15);
 const sumDigits = getSumDigits(power);
