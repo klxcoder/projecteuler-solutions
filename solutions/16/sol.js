@@ -1,3 +1,5 @@
+const N = 1000;
+
 const getPower = (n) => {
   let result = 1n;
   while (n--) {
@@ -5,5 +7,10 @@ const getPower = (n) => {
   }
   return result;
 }
+const getSumDigits = (n) => {
+  const nStr = n.toString();
+  return nStr;
+}
 const power = getPower(15);
-console.log(power);
+const sumDigits = getSumDigits(power);
+console.log(sumDigits);
