@@ -1,4 +1,5 @@
 const MOD = 10_000_000_000
+const LIMIT = 1000;
 
 const pow = (n) => {
   let result = 1;
@@ -9,10 +10,12 @@ const pow = (n) => {
 }
 
 const getAnswer = (n) => {
+  let answer = 0;
   for (let num = 1; num <= n; num++) {
-    console.log(num, pow(num));
+    answer = (answer + pow(num)) % MOD;
   }
+  return answer;
 }
 
-const answer = getAnswer(10);
+const answer = getAnswer(LIMIT);
 console.log(answer);
