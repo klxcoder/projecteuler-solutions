@@ -6,4 +6,13 @@ def get_product(s):
     product = product * int(char)
   return product
 
-print(get_product("1239"))
+def get_answer(s, k):
+  answer = 0
+  for start in range(0, len(s) - k):
+    substring = s[start:start+k]
+    product = get_product(substring)
+    if product > answer:
+      answer = product
+  return answer
+
+print(get_answer(s, 4))
