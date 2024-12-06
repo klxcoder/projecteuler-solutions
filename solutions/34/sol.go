@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
+
+const LIMIT = 9999999
 
 func getFactorial(n int) int {
 	result := 1
@@ -23,13 +23,17 @@ func getSumFactorialDigits(n int) int {
 	}
 }
 
+func getAnswer(limit int) int {
+	sum := 0
+	for num := 10; num <= limit; num++ {
+		if num == getSumFactorialDigits(num) {
+			sum += num
+		}
+	}
+	return sum
+}
+
 func main() {
-	fmt.Println(getSumFactorialDigits((9)))
-	fmt.Println(getSumFactorialDigits((99)))
-	fmt.Println(getSumFactorialDigits((999)))
-	fmt.Println(getSumFactorialDigits((9999)))
-	fmt.Println(getSumFactorialDigits((99999)))
-	fmt.Println(getSumFactorialDigits((999999)))  // 2177280
-	fmt.Println(getSumFactorialDigits((9999999))) // 2540160
-	// curious number < 9999999
+	answer := getAnswer(LIMIT)
+	fmt.Print(answer)
 }
