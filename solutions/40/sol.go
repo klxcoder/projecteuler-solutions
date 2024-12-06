@@ -3,16 +3,23 @@ package main
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
+const LIMIT = 1_000_000
+
 func getStr(n int) string {
-	str := ""
+	var builder strings.Builder
+	builder.Grow(n * 7)
 	for num:=1; num<=n; num++ {
-		str += strconv.Itoa(num)
+		builder.WriteString(strconv.Itoa(num))
+		if builder.Len() > LIMIT {
+			break
+		}
 	}
-	return str
+	return builder.String()
 }
 
 func main() {
-	fmt.Print(getStr(20))
+	fmt.Print(len(getStr(LIMIT)))
 }
