@@ -13,13 +13,23 @@ func getStr(n int) string {
 	builder.Grow(n * 7)
 	for num:=1; num<=n; num++ {
 		builder.WriteString(strconv.Itoa(num))
-		if builder.Len() > LIMIT {
+		if builder.Len() > n {
 			break
 		}
 	}
 	return builder.String()
 }
 
+func getAnswer() string {
+	str := getStr(LIMIT)
+	answer := ""
+	for num:=1; num<=LIMIT; num*=10 {
+		answer += string(str[num-1])
+	}
+	return answer
+}
+
 func main() {
-	fmt.Print(len(getStr(LIMIT)))
+	answer := getAnswer()
+	fmt.Print(answer)
 }
