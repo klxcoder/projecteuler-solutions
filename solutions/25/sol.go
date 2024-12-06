@@ -2,13 +2,19 @@ package main
 
 import (
 	"fmt"
+	"math/big"
 )
 
 func getAnser(digit int) int {
-	a := 1
-	b := 1
+	a := new(big.Int)
+	b := new(big.Int)
+
+	a.SetString("1", 10)
+	b.SetString("1", 10)
+
 	for index := 0; index < digit; index++ {
-		c := a + b
+		c := new(big.Int)
+		c.Add(a, b)
 		fmt.Println(c)
 		a = b
 		b = c
