@@ -12,17 +12,20 @@ func getAnser(digit int) int {
 	a.SetString("1", 10)
 	b.SetString("1", 10)
 
-	for index := 0; index < digit; index++ {
+	for index := 3; ; index++ {
 		c := new(big.Int)
 		c.Add(a, b)
-		fmt.Println(c)
+		str := c.String()
+		length := len(str)
+		if length >= digit {
+			return index
+		}
 		a = b
 		b = c
 	}
-	return 0
 }
 
 func main() {
-	answer := getAnser(20)
+	answer := getAnser(3)
 	fmt.Println(answer)
 }
