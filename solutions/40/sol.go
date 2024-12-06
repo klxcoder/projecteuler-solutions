@@ -20,11 +20,11 @@ func getStr(n int) string {
 	return builder.String()
 }
 
-func getAnswer() string {
+func getAnswer() int {
 	str := getStr(LIMIT)
-	answer := ""
+	answer := 1
 	for num:=1; num<=LIMIT; num*=10 {
-		answer += string(str[num-1])
+		answer *= int(str[num-1] - '0')
 	}
 	return answer
 }
