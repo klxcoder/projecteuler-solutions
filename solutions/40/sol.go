@@ -1,7 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
+
+func getStr(n int) string {
+	str := ""
+	for num:=1; num<=n; num++ {
+		str += strconv.Itoa(num)
+	}
+	return str
+}
 
 func main() {
-	fmt.Print("Go OK")
+	fmt.Print(getStr(20))
 }
