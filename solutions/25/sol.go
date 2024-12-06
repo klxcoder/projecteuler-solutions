@@ -5,6 +5,8 @@ import (
 	"math/big"
 )
 
+const DIGIT = 1000
+
 func getAnser(digit int) int {
 	a := new(big.Int)
 	b := new(big.Int)
@@ -26,6 +28,6 @@ func getAnser(digit int) int {
 }
 
 func main() {
-	answer := getAnser(3)
+	answer := getAnser(DIGIT)
 	fmt.Println(answer)
 }
