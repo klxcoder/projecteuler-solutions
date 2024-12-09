@@ -1,5 +1,4 @@
 #!/bin/bash
-
 get_answer() {
   sum=0
   for ((i=1; i<=$1-1; i++)); do
