@@ -1,6 +1,3 @@
-// All prime numbers below 20
-const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19]
-
 // Greatest common divisor
 const gcd = (a, b) => {
   if (a === 0) return b;
