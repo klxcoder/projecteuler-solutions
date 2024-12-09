@@ -25,9 +25,16 @@ get_recurring_cycle() {
 }
 
 get_answer() {
+  max_value=0
+  max_length=0
   for i in $(eval echo {2..$1}); do
-    get_recurring_cycle $i
+    output=($(get_recurring_cycle $i))
+    if [ ${output[2]} -gt $max_length ]; then
+      max_value=$i
+      max_length=${output[2]}
+    fi
   done
+  echo $max_value
 }
 
 get_answer 10
