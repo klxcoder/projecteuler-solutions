@@ -10,4 +10,4 @@ get_answer() {
   echo $sum
 }
 
-get_answer 10
+get_answer 1000
