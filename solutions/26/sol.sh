@@ -37,4 +37,4 @@ get_answer() {
   echo $max_value
 }
 
-get_answer 10
+get_answer 1000
