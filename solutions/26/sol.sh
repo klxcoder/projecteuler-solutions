@@ -6,16 +6,14 @@ get_recurring_cycle() {
   remainder=1
   while true; do
     a=$((remainder * 10))
+    if [ ${flags[$a]} ] || [ "$remainder" == "0" ]; then
+      break
+    fi
+    flags[$a]=1
     digit=$(($a/$1))
     remainder=$(($a%$1))
-    if [ ${flags[$remainder]} ]; then
-      break
-    else
-      echo "digit = $digit"
-      echo "remainder = $remainder"
-    fi
-    flags[$remainder]=1
-
+    echo "digit = $digit"
+    echo "remainder = $remainder"
   done
 }
 
