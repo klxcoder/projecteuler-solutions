@@ -20,5 +20,5 @@ function getAnswer(n: number): number {
   return answer;
 }
 
-const answer = getAnswer(10);
+const answer = getAnswer(20);
 console.log(answer);
