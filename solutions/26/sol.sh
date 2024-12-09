@@ -24,12 +24,10 @@ get_recurring_cycle() {
   done
 }
 
-get_recurring_cycle 2
-get_recurring_cycle 3
-get_recurring_cycle 4
-get_recurring_cycle 5
-get_recurring_cycle 6
-get_recurring_cycle 7
-get_recurring_cycle 8
-get_recurring_cycle 9
-get_recurring_cycle 10
+get_answer() {
+  for i in $(eval echo {2..$1}); do
+    get_recurring_cycle $i
+  done
+}
+
+get_answer 10
