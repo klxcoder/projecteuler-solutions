@@ -4,6 +4,7 @@ get_recurring_cycle() {
   echo "get_recurring_cycle for number $1"
   declare -A flags
   remainder=1
+  result="0."
   while true; do
     a=$((remainder * 10))
     if [ ${flags[$a]} ] || [ "$remainder" == "0" ]; then
@@ -11,10 +12,12 @@ get_recurring_cycle() {
     fi
     flags[$a]=1
     digit=$(($a/$1))
+    result="$result$digit"
     remainder=$(($a%$1))
     echo "digit = $digit"
     echo "remainder = $remainder"
   done
+  echo "$result"
 }
 
 get_recurring_cycle 2
