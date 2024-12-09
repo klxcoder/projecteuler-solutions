@@ -1,9 +1,21 @@
+#!/bin/bash
+
 get_recurring_cycle() {
+  echo "get_recurring_cycle for number $1"
+  declare -A flags
+  remainder=1
   while true; do
-    awk "BEGIN { print 1 / $1 }"
-    if [ true ]; then
+    a=$((remainder * 10))
+    digit=$(($a/$1))
+    remainder=$(($a%$1))
+    if [ ${flags[$remainder]} ]; then
       break
+    else
+      echo "digit = $digit"
+      echo "remainder = $remainder"
     fi
+    flags[$remainder]=1
+
   done
 }
 
