@@ -1,12 +1,16 @@
 #!/bin/bash
 
 is_palindromic() {
-  echo $1
+  local start=0
+  local end=$(( ${#1} - 1 ))
+  echo $1 $start $end
 }
 
 get_answer() {
-  start=$1
-  end=$2
+  local start=$1
+  local end=$2
+  local i
+  local j
   for ((i=$start; i<=$end; i++)) ; do
     for ((j=i; j<=end; j++)); do
       product=$(($i*$j))
