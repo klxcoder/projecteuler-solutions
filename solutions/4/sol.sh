@@ -5,7 +5,8 @@ get_answer() {
   end=$2
   for ((i=$start; i<=$end; i++)) ; do
     for ((j=i; j<=end; j++)); do
-      echo $i $j
+      product=$(($i*$j))
+      echo $product
     done
   done
 }
