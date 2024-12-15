@@ -12,6 +12,12 @@ func sumOfSquares(n int) int {
 	return sum
 }
 
+func squareOfSum(n int) int {
+	sum := n * (n + 1) / 2
+	return sum * sum
+}
+
 func main() {
-	fmt.Print(sumOfSquares(10))
+	fmt.Println(sumOfSquares(10))
+	fmt.Println(squareOfSum(10))
 }
