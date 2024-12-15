@@ -20,7 +20,12 @@ lcm() {
 }
 
 get_answer() {
-  lcm $1 $2
+  local answer=1
+  local num
+  for num in $(seq 2 $1); do
+    answer=$(lcm $answer $num)
+  done
+  echo $answer
 }
 
-get_answer 10 12
+get_answer 10
