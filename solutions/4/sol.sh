@@ -38,4 +38,4 @@ get_answer() {
   echo $max_product
 }
 
-get_answer 10 99
+get_answer 100 999
