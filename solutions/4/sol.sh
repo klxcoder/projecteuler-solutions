@@ -3,7 +3,7 @@
 is_palindromic() {
   local start=0
   local end=$(( ${#1} - 1 ))
-  while [ true ]; do
+  while [ $start -lt $end ]; do
     break
   done
   echo $1 $start $end
