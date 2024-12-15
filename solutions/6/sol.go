@@ -17,7 +17,10 @@ func squareOfSum(n int) int {
 	return sum * sum
 }
 
+func getAnswer(n int) int {
+	return squareOfSum(n) - sumOfSquares(n)
+}
+
 func main() {
-	fmt.Println(sumOfSquares(10))
-	fmt.Println(squareOfSum(10))
+	fmt.Println(getAnswer(10))
 }
