@@ -10,7 +10,7 @@ sumOfSquares() {
 }
 
 squareOfSum() {
-  local sum=$(($1*$1/2))
+  local sum=$(($1*($1+1)/2))
   echo $((sum*sum))
 }
 
