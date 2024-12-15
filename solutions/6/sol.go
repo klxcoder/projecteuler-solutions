@@ -22,5 +22,5 @@ func getAnswer(n int) int {
 }
 
 func main() {
-	fmt.Println(getAnswer(10))
+	fmt.Println(getAnswer(100))
 }
