@@ -1,7 +1,14 @@
 #!/bin/bash
 
-get_answer() {
-  echo $1 and $2
+sumOfSquares() {
+  local num
+  for num in $(seq 1 $1); do
+    echo $num
+  done
 }
 
-get_answer Hello World
+get_answer() {
+  sumOfSquares $1
+}
+
+get_answer 10
