@@ -23,7 +23,7 @@ func lcm(a int, b int) int {
 
 func main() {
 	answer := 1
-	for num := 2; num <= 10; num++ {
+	for num := 2; num <= 20; num++ {
 		answer = lcm(answer, num)
 	}
 	fmt.Print(answer)
