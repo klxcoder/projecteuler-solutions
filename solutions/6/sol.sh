@@ -9,8 +9,14 @@ sumOfSquares() {
   echo $sum
 }
 
+squareOfSum() {
+  local sum=$(($1*$1/2))
+  echo $((sum*sum))
+}
+
 get_answer() {
   sumOfSquares $1
+  squareOfSum $1
 }
 
 get_answer 10
