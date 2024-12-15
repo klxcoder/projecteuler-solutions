@@ -15,11 +15,12 @@ gcd() {
 
 # Least common multiple
 lcm() {
-  echo "ok"
+  local g=$(gcd $1 $2)
+  echo $(( $1 * $2 / $g ))
 }
 
 get_answer() {
-  gcd $1 $2
+  lcm $1 $2
 }
 
 get_answer 10 12
