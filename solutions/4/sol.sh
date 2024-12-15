@@ -4,7 +4,8 @@ is_palindromic() {
   local start=0
   local end=$(( ${#1} - 1 ))
   while [ $start -lt $end ]; do
-    break
+    ((start++))
+    ((end--))
   done
   echo $1 $start $end
 }
