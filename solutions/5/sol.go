@@ -22,5 +22,9 @@ func lcm(a int, b int) int {
 }
 
 func main() {
-	fmt.Print(lcm(10, 12))
+	answer := 1
+	for num := 2; num <= 10; num++ {
+		answer = lcm(answer, num)
+	}
+	fmt.Print(answer)
 }
