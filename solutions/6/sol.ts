@@ -6,4 +6,10 @@ const sumOfSquares: (n: number) => number = (n) => {
   return sum;
 }
 
+const squareOfSum: (n: number) => number = (n) => {
+  const sum = n * (n + 1) / 2;
+  return sum * sum;
+}
+
 console.log(sumOfSquares(10))
+console.log(squareOfSum(10))
