@@ -17,8 +17,10 @@ func gcd(a int, b int) int {
 }
 
 // Least common multiple
-// lcm
+func lcm(a int, b int) int {
+	return a * b / gcd(a, b)
+}
 
 func main() {
-	fmt.Print(gcd(10, 12))
+	fmt.Print(lcm(10, 12))
 }
