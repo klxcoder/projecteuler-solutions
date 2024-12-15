@@ -4,10 +4,15 @@ is_palindromic() {
   local start=0
   local end=$(( ${#1} - 1 ))
   while [ $start -lt $end ]; do
+    start_char=${1:$start:1}
+    end_char=${1:$end:1}
+    if [ $start_char != $end_char ]; then
+      return 0
+    fi
     ((start++))
     ((end--))
   done
-  echo $1 $start $end
+  return 1
 }
 
 get_answer() {
@@ -19,6 +24,7 @@ get_answer() {
     for ((j=i; j<=end; j++)); do
       product=$(($i*$j))
       is_palindromic $product
+      echo $product $?
     done
   done
 }
