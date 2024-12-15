@@ -27,11 +27,9 @@ get_answer() {
     for ((j=i; j<=end; j++)); do
       product=$(($i*$j))
       is_palindromic $product
-      if [ $? -eq 1 ]; then
-        if [ $product -gt $max_product ]; then
+      if [ $? -eq 1 ] && [ $product -gt $max_product ]; then
           max_product=$product
           max_length=${#product}
-        fi
       fi
     done
   done
