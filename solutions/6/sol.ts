@@ -15,4 +15,4 @@ const getAnswer: (n: number) => number = (n) => {
   return squareOfSum(n) - sumOfSquares(n)
 }
 
-console.log(getAnswer(10))
+console.log(getAnswer(100))
