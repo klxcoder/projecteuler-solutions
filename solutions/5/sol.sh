@@ -28,4 +28,4 @@ get_answer() {
   echo $answer
 }
 
-get_answer 10
+get_answer 20
