@@ -15,8 +15,9 @@ squareOfSum() {
 }
 
 get_answer() {
-  sumOfSquares $1
-  squareOfSum $1
+  local first_number=$(squareOfSum $1)
+  local second_number=$(sumOfSquares $1)
+  echo $((first_number-second_number))
 }
 
 get_answer 10
