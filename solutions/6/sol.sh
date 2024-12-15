@@ -20,4 +20,4 @@ get_answer() {
   echo $((first_number-second_number))
 }
 
-get_answer 10
+get_answer 100
