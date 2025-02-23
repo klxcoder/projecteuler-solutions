@@ -32,6 +32,24 @@ func nextPermutation(arr []int) []int {
 	return arr
 }
 
+func getFlip(arr []int) []int {
+	arrCopy := make([]int, len(arr))
+	for i := 0; i < len(arr); i++ {
+		arrCopy[i] = len(arr) + 1 - arr[i]
+	}
+	return arrCopy
+}
+
+func getNumber(arr []int) int {
+	base := 1
+	number := 0
+	for i := len(arr) - 1; i >= 0; i-- {
+		number += arr[i] * base
+		base *= 10
+	}
+	return number
+}
+
 func isPrime(n int) bool {
 	if n < 2 {
 		return false
@@ -51,13 +69,18 @@ func isPrime(n int) bool {
 }
 
 func main() {
-	// arr := [10]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	arr := [5]int{1, 3, 5, 4, 2}
-	nextArr := nextPermutation(arr[:])
-	fmt.Print(nextArr) // [1 4 2 3 5]
-	for i := 1; i <= 20; i++ {
-		if isPrime(i) {
-			fmt.Println(i)
+	arr := []int{1, 2, 3, 4, 5, 6, 7}
+	nextArr := arr[:]
+	for {
+		flip := getFlip(nextArr)
+		number := getNumber((flip))
+		if isPrime(number) {
+			fmt.Println(number)
+			break
+		}
+		nextArr = nextPermutation(nextArr[:])
+		if nextArr == nil {
+			break
 		}
 	}
 }
