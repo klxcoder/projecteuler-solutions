@@ -2,13 +2,14 @@ package main
 
 import "fmt"
 
-func main() {
-	// arr := [10]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	arr := [...]int{1, 3, 5, 4, 2}
-	n := 5
-	i := 3
+func nextPermutation(arr []int) []int {
+	n := len(arr)
+	i := n - 2
 	for i >= 0 && arr[i] >= arr[i+1] {
 		i--
+	}
+	if i < 0 {
+		return nil
 	}
 	k := i + 1
 	for j := i + 1; j < n; j++ {
@@ -28,5 +29,12 @@ func main() {
 		i++
 		j--
 	}
-	fmt.Print(arr) // [1 4 2 3 5]
+	return arr
+}
+
+func main() {
+	// arr := [10]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	arr := [5]int{1, 3, 5, 4, 2}
+	nextArr := nextPermutation(arr[:])
+	fmt.Print(nextArr) // [1 4 2 3 5]
 }
