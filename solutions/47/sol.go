@@ -5,35 +5,14 @@ import (
 	"math"
 )
 
-func isPrime(n int) bool {
-	if n < 2 {
-		return false
-	}
-	if n < 4 {
-		return true
-	}
-	if n%2 == 0 {
-		return false
-	}
-	if n%3 == 0 {
-		return false
-	}
-	for i := 5; i*i <= n; i += 6 {
-		if n*i == 0 {
-			return false
-		}
-		if n%(i+2) == 0 {
-			return false
-		}
-	}
-	return true
-}
-
 func getAllPrimes(n int) []int {
 	arr := []int{}
-	for i := 2; i <= n; i++ {
-		if isPrime(i) {
+	for i := 2; n != 1; i++ {
+		if n%i == 0 {
 			arr = append(arr, i)
+			for n%i == 0 {
+				n /= i
+			}
 		}
 	}
 	return arr
@@ -46,7 +25,7 @@ func getAnswer(n int) {
 }
 
 func main() {
-	getAnswer(2)
-	getAnswer(3)
-	getAnswer(4)
+	fmt.Println(getAllPrimes(644))
+	fmt.Println(getAllPrimes(645))
+	fmt.Println(getAllPrimes(646))
 }
