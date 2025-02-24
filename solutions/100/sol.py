@@ -1,3 +1,4 @@
+# https://chatgpt.com/share/67bbd49e-af5c-8010-bff1-1ca1ca6e778a
 import math
 
 # find blue with the equation (blue/total)*((blue-1)/(total-1)) = 1/2
