@@ -39,8 +39,13 @@ const getSolved = async () => {
 
 const getNotSolved = async () => {
   const solved = await getSolved();
-  const notSolved = []
-  for (let problem = 1; problem <= N; problem++) {
+  const notSolved = [];
+  const args = process.argv.slice(2); // Remove first two default entries
+  let n = N;
+  if (args.length > 0) {
+    n = parseInt(args[0]);
+  }
+  for (let problem = 1; problem <= n; problem++) {
     for (const language of LANGUAGES) {
       if (!solved.includes(`${problem}/${language}`)) {
         notSolved.push(`${problem}/${language}`);
@@ -56,6 +61,10 @@ const getRandomElement = (arr) => {
 
 const getRandomProblem = (notSolved) => {
   const randomProblem = getRandomElement(notSolved);
+  if (!randomProblem) {
+    console.log("All problems are solved");
+    process.exit(0);
+  }
   const problem = randomProblem.split("/")[0];
   const language = randomProblem.split("/")[1];
   return { problem, language };
