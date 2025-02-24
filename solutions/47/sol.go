@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func getAllPrimes(n int) []int {
@@ -19,10 +18,8 @@ func getAllPrimes(n int) []int {
 }
 
 func getAnswer(n int) int {
-	begin := int(math.Pow(10, float64(n-1)))
-	end := int(math.Pow(10, float64(n))) - 1
 	count := 0
-	for i := begin; i <= end; i++ {
+	for i := 1; ; i++ {
 		if len(getAllPrimes(i)) == n {
 			count++
 			if count == n {
@@ -32,7 +29,6 @@ func getAnswer(n int) int {
 			count = 0
 		}
 	}
-	return -1
 }
 
 func main() {
