@@ -18,14 +18,25 @@ func getAllPrimes(n int) []int {
 	return arr
 }
 
-func getAnswer(n int) {
+func getAnswer(n int) int {
 	begin := int(math.Pow(10, float64(n-1)))
 	end := int(math.Pow(10, float64(n))) - 1
-	fmt.Println(begin, end)
+	count := 0
+	for i := begin; i <= end; i++ {
+		if len(getAllPrimes(i)) == n {
+			count++
+			if count == n {
+				return i - n + 1
+			}
+		} else {
+			count = 0
+		}
+	}
+	return -1
 }
 
 func main() {
-	fmt.Println(getAllPrimes(644))
-	fmt.Println(getAllPrimes(645))
-	fmt.Println(getAllPrimes(646))
+	fmt.Println(getAnswer(2))
+	fmt.Println(getAnswer(3))
+	fmt.Println(getAnswer(4))
 }
