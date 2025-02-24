@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func isPrime(n int) bool {
@@ -38,7 +39,14 @@ func getAllPrimes(n int) []int {
 	return arr
 }
 
+func getAnswer(n int) {
+	begin := int(math.Pow(10, float64(n-1)))
+	end := int(math.Pow(10, float64(n))) - 1
+	fmt.Println(begin, end)
+}
+
 func main() {
-	primes := getAllPrimes(100)
-	fmt.Println(primes)
+	getAnswer(2)
+	getAnswer(3)
+	getAnswer(4)
 }
