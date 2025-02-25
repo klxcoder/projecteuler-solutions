@@ -26,5 +26,16 @@ def solveQuadratic(a, b, c):
     arr.append(math.floor(x2))
   return arr
 
-print(solveQuadratic(1, 1, -2 * 40755))
-print(solveQuadratic(3, -1, -2 * 40755))
+def getAnswer(first):
+  n = first
+  while True:
+    h = n*(2*n-1)
+    solve_t = solveQuadratic(1, 1, -2 * h)
+    solve_p = solveQuadratic(3, -1, -2 * h)
+    if len(solve_t) != 0 and len(solve_p) != 0:
+      return [n, h]
+    n+=1
+
+print(getAnswer(1))
+print(getAnswer(2))
+print(getAnswer(144))
