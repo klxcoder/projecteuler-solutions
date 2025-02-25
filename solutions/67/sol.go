@@ -1,7 +1,9 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 )
 
 func getAnswer(arr [][]int) int {
@@ -20,12 +22,36 @@ func getAnswer(arr [][]int) int {
 	return answer
 }
 
+func getArr(n int) [][]int {
+	arr := make([][]int, n)
+	file, err := os.Open("triangle.txt")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return nil
+	}
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+	for scanner.Scan() {
+		line := scanner.Text()
+		fmt.Println(line)
+	}
+
+	if err := scanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+	}
+	return arr
+}
+
 func main() {
-	arr := [][]int{
+	arr1 := [][]int{
 		{3},
 		{7, 4},
 		{2, 4, 6},
 		{8, 5, 9, 3},
 	}
-	fmt.Println(getAnswer(arr))
+	fmt.Println(getAnswer(arr1))
+	arr2 := getArr(100)
+	if arr2 != nil {
+	}
 }
