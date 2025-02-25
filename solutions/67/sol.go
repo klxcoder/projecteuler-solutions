@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func getAnswer(arr [][]int) int {
@@ -32,9 +33,15 @@ func getArr(n int) [][]int {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
+	count := 0
 	for scanner.Scan() {
 		line := scanner.Text()
-		fmt.Println(line)
+		strNumbers := strings.Split(line, " ")
+		fmt.Println(strNumbers[0])
+		count++
+		if count == n {
+			break
+		}
 	}
 
 	if err := scanner.Err(); err != nil {
