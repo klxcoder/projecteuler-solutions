@@ -72,8 +72,7 @@ const getRandomProblem = (notSolved) => {
 
 (async () => {
   const notSolved = await getNotSolved();
+  console.log(`${notSolved.length} problem(s) are not solved`);
   const randomProblem = getRandomProblem(notSolved);
-  console.log(randomProblem);
+  console.log(`Random problem to solve next: `, randomProblem);
 })();
-
-
