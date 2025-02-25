@@ -10,6 +10,28 @@ function readFirstLine(filePath) {
   return data.split("\n")[0] || null;
 }
 
-console.log(readFirstLine("words.txt"));
+const getAnswer = () => {
+  const firstLine = readFirstLine("words.txt");
+  const words = firstLine.split(",").map(word => word.slice(1, word.length - 1));
+  const wordValues = []
+  let maxWordValue = 0;
+  for (const word of words) {
+    const wordValue = getWordValue(word);
+    if (wordValue > maxWordValue) {
+      maxWordValue = wordValue;
+    }
+    wordValues.push(wordValue);
+  }
+  const triangleNumbers = []
+  for (let n = 1; ; n++) {
+    const triangleNumber = n * (n + 1) / 2;
+    if (triangleNumber > maxWordValue) {
+      break;
+    }
+    triangleNumbers.push(triangleNumber)
+  }
+  return wordValues.reduce((count, wordValue) => triangleNumbers.includes(wordValue) ? count + 1 : count, 0);
+}
 
-console.log(getWordValue("SKY"));
+const answer = getAnswer();
+console.log(answer);
