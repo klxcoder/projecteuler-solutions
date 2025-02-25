@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -33,13 +34,16 @@ func getArr(n int) [][]int {
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
-	count := 0
+	i := 0
 	for scanner.Scan() {
 		line := scanner.Text()
 		strNumbers := strings.Split(line, " ")
-		fmt.Println(strNumbers[0])
-		count++
-		if count == n {
+		arr[i] = make([]int, i+1)
+		for j, strNumber := range strNumbers {
+			arr[i][j], _ = strconv.Atoi(strNumber)
+		}
+		i++
+		if i == n {
 			break
 		}
 	}
@@ -59,6 +63,5 @@ func main() {
 	}
 	fmt.Println(getAnswer(arr1))
 	arr2 := getArr(100)
-	if arr2 != nil {
-	}
+	fmt.Println(getAnswer(arr2))
 }
