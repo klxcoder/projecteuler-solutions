@@ -13,4 +13,24 @@ const getPrimeFactors = (n) => {
   return arr
 }
 
-console.log(getPrimeFactors(644))
+const getAnswer = (k) => {
+  let count = 0
+  let n = 1
+  while (true) {
+    const primeFactors = getPrimeFactors(n)
+    if (primeFactors.length === k) {
+      count++
+      if (count === k) {
+        return n - k + 1
+      }
+    } else {
+      count = 0
+    }
+    n++
+  }
+}
+
+console.log(getAnswer(1))
+console.log(getAnswer(2))
+console.log(getAnswer(3))
+console.log(getAnswer(4))
